@@ -2,11 +2,68 @@ body {
   background-color: var(--light-gray);
   display: grid;
   grid-gap: 20px;
+  /* justify-content: center; */
+  font-size: 1.3em;
 }
 
 #content {
-  margin-top: 20px;
   display: grid;
+  grid-gap: 20px;
+  margin-top: 10px;
+  /* width: 300px; */
+  padding: 20px;
+}
+
+.featured-section {
+  background: url(../images/bg-pattern-quotation.svg) var(--moderate-violet) no-repeat;
+  background-size: auto;
+  background-position: top right;
+}
+
+.cards {
+  display: grid;
+  grid-gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid red;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 56px 1fr);
+  gap: 25px;
+  align-items: center;
+}
+
+.card .profile-photo {
+  border-radius: 50%;
+  border: 2px solid var(--light-gray);
+}
+
+.card .infos {
+  display: grid;
+  grid-gap: 10px;
+  width: 130px;
+  color: var(--light-gray);
+}
+
+.card .profile-name {
+  font: var(--feature-text-semibold);
+  /* color: var(--light-gray); */
+}
+
+.card .status-account {
+  font: var(--feature-text);
+}
+
+.main-quote {
+  font: var(--text-quotation);
+  color: var(--white);
+}
+
+.summary-report {
+  font: var(--feature-text);
+  color: var(--light-gray);
 }
 
 .attribution {
