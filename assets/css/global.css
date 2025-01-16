@@ -18,7 +18,7 @@ html {
   --light-grayish-blue: hsl(210, 46%, 95%);
 
   --barlow-semi-condensed: "Barlow Semi Condensed", serif;
-  --feature-text: 500 1.3em/150% var(--barlow-semi-condensed);
-  --feature-text-semibold: 600 1.4em/100% var(--barlow-semi-condensed);
-  --text-quotation: 600 2.2em/150% var(--barlow-semi-condensed);
+  --text: 500 1.3em/150% var(--barlow-semi-condensed);
+  --feature-text: 500 1.5em/100% var(--barlow-semi-condensed);
+  --text-quotation: 600 2em/150% var(--barlow-semi-condensed);
 }
