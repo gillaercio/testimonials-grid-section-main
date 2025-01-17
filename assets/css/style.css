@@ -3,7 +3,7 @@ body {
   display: grid;
   grid-gap: 20px;
   height: 100vh;
-  align-content: center;
+  justify-items: center;
   font-size: 1.3em;
   transition: width .4s, height .4s;
   transition-timing-function: ease;
@@ -13,20 +13,20 @@ body {
   display: grid;
   grid-template-columns: repeat(1, minmax(300px, 400px));
   grid-gap: 20px;
-  justify-content: center;
+  justify-items: center;
   margin-top: 10px;
 }
 
 .featured-section {
   background: url(../images/bg-pattern-quotation.svg) var(--moderate-violet) no-repeat;
   background-size: auto;
-  background-position: top right;
+  background-position: 90% top;
 }
 
 .cards {
   display: grid;
   grid-gap: 20px;
-  padding: 25px;
+  padding: 20px;
   border-radius: 10px;
 }
 
@@ -100,9 +100,8 @@ body {
 }
 
 .attribution {
-  margin-bottom: 20px;
+  align-self: start;
   font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
 }
 
 .attribution a {
@@ -119,36 +118,49 @@ body {
 
 @media screen and (width > 769px) {
   #content {
-    grid-template-columns: repeat(2, minmax(300px, 400px));
-    grid-gap: 25px;
+    grid-template-columns: repeat(2, minmax(240px, 680px));
+    padding-inline: 10px;
+    grid-gap: 20px;
   }
 
-  .featured-section {
+  .featured-section,
+  .cards:nth-child(4),
+  .cards:nth-child(5) {
     grid-column: span 2;
-    order: -1;
+  }
+
+  .attribution {
+    font-size: 1.5em;
   }
 }
 
-@media screen and (width > 1200px) {
+@media screen and (width > 1460px) {
   #content {
-    grid-template-columns: repeat(4, minmax(300px, 1fr))
+    align-content: center;
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+    max-width: 1690px;
+    grid-template-areas: 
+    "feature feature top aside"
+    "left middle middle aside";
+  }
+
+  .cards:nth-child(1) {
+    grid-area: feature;
   }
 
   .cards:nth-child(2) {
-    order: 1;
+    grid-area: top;
   }
 
   .cards:nth-child(3) {
-    order: 2;
+    grid-area: left;
   }
 
   .cards:nth-child(4) {
-    grid-column: span 2;
-    order: 3;
+    grid-area: middle;
   }
 
   .cards:nth-child(5) {
-    grid-row: span 2;
-    order: 1;
+    grid-area: aside;
   }
 }
