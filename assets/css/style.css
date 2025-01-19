@@ -12,7 +12,7 @@ body {
 #content {
   display: grid;
   grid-template-columns: repeat(1, minmax(300px, 400px));
-  grid-gap: 20px;
+  grid-gap: 10px;
   justify-items: center;
   margin-top: 10px;
 }
@@ -118,9 +118,13 @@ body {
 
 @media screen and (width > 769px) {
   #content {
-    grid-template-columns: repeat(2, minmax(240px, 680px));
+    grid-template-columns: repeat(2, minmax(300px, 400px));
     padding-inline: 10px;
     grid-gap: 20px;
+  }
+
+  .cards {
+    padding: 30px;
   }
 
   .featured-section,
@@ -134,33 +138,35 @@ body {
   }
 }
 
-@media screen and (width > 1460px) {
+@media screen and (width > 1439px) {
   #content {
     align-content: center;
-    grid-template-columns: repeat(4, minmax(300px, 1fr));
-    max-width: 1690px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
+    max-width: 1960px;
+    grid-gap: 30px;
     grid-template-areas: 
-    "feature feature top aside"
-    "left middle middle aside";
+    "feature-content feature-content top-content sidebar-content"
+    "left-content middle-content middle-content sidebar-content";
   }
 
   .cards:nth-child(1) {
-    grid-area: feature;
+    grid-area: feature-content;
   }
 
   .cards:nth-child(2) {
-    grid-area: top;
+    grid-area: top-content;
   }
 
   .cards:nth-child(3) {
-    grid-area: left;
+    grid-area: left-content;
   }
 
   .cards:nth-child(4) {
-    grid-area: middle;
+    grid-area: middle-content;
   }
 
   .cards:nth-child(5) {
-    grid-area: aside;
+    grid-area: sidebar-content;
   }
 }
