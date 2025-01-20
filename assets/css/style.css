@@ -33,7 +33,7 @@ body {
 .card {
   display: grid;
   grid-template-columns: repeat(2, 56px 1fr);
-  grid-gap: 25px;
+  grid-gap: 20px;
   align-items: center;
 }
 
@@ -44,7 +44,6 @@ body {
 
 .card .infos {
   display: grid;
-  grid-gap: 8px;
   width: 140px;
   color: var(--light-gray);
 }
@@ -52,6 +51,7 @@ body {
 .card .profile-name {
   font: var(--feature-text);
   color: var(--white);
+  width: auto;
 }
 
 .card .status-account {
@@ -116,9 +116,9 @@ body {
   text-decoration: underline;
 }
 
-@media screen and (width > 769px) {
+@media screen and (width > 805px) {
   #content {
-    grid-template-columns: repeat(2, minmax(300px, 400px));
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
     padding-inline: 10px;
     grid-gap: 20px;
   }
@@ -144,7 +144,6 @@ body {
     display: grid;
     grid-template-columns: repeat(4, minmax(auto, 1fr));
     max-width: 1960px;
-    grid-gap: 30px;
     grid-template-areas: 
     "feature-content feature-content top-content sidebar-content"
     "left-content middle-content middle-content sidebar-content";
@@ -169,4 +168,49 @@ body {
   .cards:nth-child(5) {
     grid-area: sidebar-content;
   }
+
+  .main-quote {
+    font-size: 2.5em;
+  }
+
+  .review-paragraph {
+    font-size: 1.6em;
+    line-height: 1.6em;
+  }
+
+  .card {
+    height: 70px;
+    grid-gap: 25px;
+  }
+
+  .card .infos {
+    width: 200px;
+  }
+
+  .card .profile-name {
+    font-size: 2em;
+  }
+
+  .card .status-account {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (width > 1690px) {
+  #content {
+    grid-gap: 30px;
+  }
+
+  .cards {
+    padding: 40px;
+  }
+
+  .card .status-account {
+    font-size: 1.6em;
+  }
+
+  .attribution {
+    font-size: 1.7em;
+  }
+
 }
